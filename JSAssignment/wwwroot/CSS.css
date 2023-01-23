@@ -1,0 +1,230 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    background-color: black;
+}
+
+.player{
+    font-size:16px;
+    color:white;
+    text-align:center;
+}
+
+.wrapper {
+    box-sizing: content-box;
+    width: 55em;
+    height: 50em;
+    background-color: #ffffff;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    top: 50%;
+    border-radius: 0.6em;
+    box-shadow: 0 0.9em 2.8em rgba(86, 66, 0, 0.2);
+}
+
+.game-container {
+    position: relative;
+    width: 100%;
+    display: grid;
+    gap: 2.6em;
+}
+
+.stats-container {
+    text-align: right;
+    margin-bottom: 1.2em;
+}
+
+    .stats-container span {
+        font-weight: 600;
+    }
+
+.card-container {
+    position: relative;
+    width: 6.25em;
+    height: 6.25em;
+    cursor: pointer;
+}
+
+.card-before,
+.card-after {
+    position: absolute;
+    border-radius: 5px;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 4px solid #000000;
+    transition: transform 0.7s ease-out;
+    backface-visibility: hidden;
+}
+
+.card-before {
+    background-image:url(back.jpg);
+
+}
+
+.card-after {
+    background-color: #ffffff;
+    transform: rotateY(180deg);
+}
+
+.card-container.flipped .card-before {
+    transform: rotateY(180deg);
+}
+
+.card-container.flipped .card-after {
+    transform: rotateY(0deg);
+}
+
+.controls-container {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    background-color: #f4c531;
+    top: 0;
+}
+
+.winner{
+    font-size:30px;
+    color:gold;
+}
+
+button {
+    border: none;
+    border-radius: 0.3em;
+    padding: 1em 1.5em;
+    cursor: pointer;
+}
+
+#stop {
+    font-size: 1.1em;
+    display: block;
+    margin: 1.1em auto 0 auto;
+    background-color: #000000;
+    color: #ffffff;
+}
+
+.controls-container button {
+    font-size: 1.3em;
+    box-shadow: 0 0.6em 2em rgba(86, 66, 0, 0.2);
+}
+
+.hide {
+    display: none;
+}
+
+#result {
+    text-align: center;
+}
+
+    #result h2 {
+        font-size: 2.5em;
+    }
+
+    #result h4 {
+        font-size: 1.8em;
+        margin: 0.6em 0 1em 0;
+    }
+
+
+#menu {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    background: linear-gradient(0deg, rgba(33,97,40,1) 0%, rgba(32,209,69,1) 100%);
+    transition: 0.9s;
+}
+
+.btn {
+    transition: 0.9s;
+}
+
+    .btn:hover {
+        opacity: 0.3;
+    }
+
+    .btn.pressed {
+        border-radius: 50%;
+    }
+
+
+#size,
+#players,
+#images,
+.btn {
+    border: 1px solid aliceblue;
+    border-radius: 0.3em;
+    font-size: large;
+    padding: 1em 1.5em;
+    cursor: pointer;
+    background-color: transparent;
+    color: aliceblue;
+    text-align: center;
+}
+
+#size, #players, #images, #start {
+    animation-name: myAnim;
+    animation-duration: 1s;
+    transition: 0.9s;
+}
+
+.hide {
+    display: none;
+}
+
+.active {
+    display: block;
+}
+
+.variants {
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    animation-name: myAnim;
+    animation-duration: 1s;
+    padding-top: 15px;
+    position: absolute;
+}
+
+
+@keyframes myAnim {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+#size .variants {
+    right: 42%;
+    margin-right: 5px;
+}
+
+#players .variants {
+    right: 35%;
+    margin-right: 5px;
+}
+
+#images .variants {
+    right: 40%;
+    margin-left: 12px;
+}
